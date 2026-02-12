@@ -1,0 +1,16 @@
+----- LOGIN -----
+
+Command:
+curl -X POST http://localhost:3000/auth/login -H "Content-Type: application/json" -d "{\"email\":\"your_email@example.com\",\"password\":\"password123\"}"
+
+Output:
+{"message":"OTP sent","loginSessionId":"z3z6wg"}
+
+
+----- VERIFY OTP -----
+
+Command:
+curl -c cookies.txt -X POST http://localhost:3000/auth/verify-otp -H "Content-Type: application/json" -d "{\"loginSessionId\":\"z3z6wg\",\"otp\":\"591540\"}"
+
+Output:
+{"message":"OTP verified","sessionId":"yayp9te"}
